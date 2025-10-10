@@ -3,7 +3,7 @@
 This page summarizes my security automation & architecture work at a generic level (no proprietary names or code).
 
 ## Downloads
-- **Detailed Portfolio (PDF):** [Detailed_Portfolio.pdf](./Detailed_Portfolio.pdf)
+- **Detailed Portfolio (PDF):** [Detailed_Portfolio.pdf](./docs/Detailed_Portfolio.pdf)
 
 ## Portfolio at a glance
 - **Scale:** ≈288k LOC
