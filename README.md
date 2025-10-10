@@ -1,4 +1,4 @@
-# Security Portfolio (Redacted)
+# Portfolio
 
 **Elias Leslie** — Technical CISO/Director • Security Automation & Architecture  
 [LinkedIn](https://linkedin.com/in/elias-leslie)
