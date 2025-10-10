@@ -1,4 +1,4 @@
-# Security Portfolio (Redacted)
+# Portfolio
 
 This page summarizes my security automation & architecture work at a generic level (no proprietary code).
 
