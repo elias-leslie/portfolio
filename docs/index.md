@@ -1,9 +1,9 @@
 # Security Portfolio (Redacted)
 
-This page summarizes my **security automation & architecture** work at a generic level (no proprietary code).
+This page summarizes my security automation & architecture work at a generic level (no proprietary code).
 
 ## Download
-- **PDF:** [Redacted Security Automation Portfolio — Executive Summary](./_Elias_Leslie_Redacted_Security_Automation_Portfolio_Summary.pdf)
+- **PDF:** [Redacted Security Automation Portfolio — Executive Summary](./Elias_Leslie_Portfolio_Summary_Security_Automation.pdf)
 
 ## Highlights
 - IR & Containment: WFP isolation with safe exceptions & rollback
