@@ -7,6 +7,4 @@ This repository contains a **generic, redacted overview** of security capabiliti
 It intentionally omits proprietary code and identifiers.
 
 ## Documents
-- **Executive Summary (PDF):** `docs/Elias_Leslie_Redacted_Security_Automation_Portfolio_Summary.pdf`  
-
-> I can provide a live whiteboard walkthrough on request.
+- **Executive Summary (PDF):** `docs/Elias_Leslie_Redacted_Security_Automation_Portfolio_Summary.pdf`
