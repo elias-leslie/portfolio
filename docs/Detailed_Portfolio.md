@@ -4,37 +4,41 @@ Last updated: 2026-06-07
 
 ## Summary
 
-Elias Leslie builds practical automation systems across AI automation, security automation, cyber security, agentic developer tooling, and full-stack infrastructure. The common thread is operator-grade software: documented setup, secure defaults, tests, runtime smoke checks, and honest limitations.
+Elias Leslie builds practical automation systems across AI automation, security automation, cyber security, agentic developer tooling, and full-stack infrastructure. The common thread is operator-grade software: documented setup, secure defaults, tests, runtime smoke checks, secret hygiene, clean install verification, and honest limitations.
 
-## Featured project: Aico
+## Featured project: Security Hardening Automation (SHA)
 
-Aico is a Linux desktop companion for terminal AI agents. It provides floating widgets, isolated tmux sessions, a local FastAPI sidecar, click-to-context capture, and optional browser/voice integrations.
+SHA is a clean-room security hardening automation platform for Windows and Linux endpoints. It provides a FastAPI control-plane API, a Next.js operator dashboard, deterministic installer-profile artifacts, generated API schemas, and curated public-source starter controls.
 
-Repository: https://github.com/elias-leslie/aico
+Repository: https://github.com/elias-leslie/sha
 
-Problem: Terminal AI agents are useful but fragmented across shells, browser context, desktop selection, and project state. Public release also required installable docs and proof that private/internal material was not exposed.
+Problem: Endpoint hardening often becomes a brittle mix of one-off scripts, undocumented baseline assumptions, risky remote access, and unclear rollback paths.
 
-Solution: Aico wraps agent terminals in a desktop companion with a local-only sidecar API, source installer, optional integrations, and hardened public docs/config.
+Solution: SHA models hardening as a bounded control plane: enroll endpoints, collect posture, browse curated controls, generate installer profiles, and route disruptive work through approval requests/grants.
 
-Stack: Electron, TypeScript, Vite, FastAPI, Python 3.13, tmux, uv, Node.js, browser extension APIs.
+Stack: FastAPI, Python 3.13, SQLAlchemy, Pydantic, Next.js 16, React 19, TypeScript, Vitest, pnpm, uv, SQLite for local development.
 
-Built: Floating desktop widgets, tmux-backed terminal sessions, FastAPI health/selection/widget APIs, optional speech-to-text websocket client, Chrome/Chromium extension, clean source installer, CI, Apache-2.0 release docs.
+Built: Backend APIs, dashboard pages for fleet/endpoints/controls/installers/approvals, deterministic Linux/Windows bootstrap artifacts, generated JSON Schemas, Apache-2.0 public release docs, CI, and a clean public control-pack path.
 
-Skills demonstrated: Desktop integration, secure local service design, TypeScript/Python testing, Linux packaging realities, secret/history scanning, clean-room install verification.
+Skills demonstrated: Security automation design, public-source provenance cleanup, secret/history scanning, dependency vulnerability remediation, full-stack testing, browser/runtime smoke checks, and clean Proxmox install verification.
 
-Security/AI relevance: Aico keeps sensitive workflow state local by default, uses loopback APIs, degrades when optional integrations are absent, and makes terminal agents faster to operate without granting unnecessary access.
+Security and AI relevance: SHA keeps endpoint work bounded to typed hardening workflows, avoids arbitrary shell access, documents approval boundaries, and provides a foundation for supervised operator automation.
 
-Status and limitations: Public source release for single-user Linux desktops. Wayland/global shortcut support can be limited by desktop environment. Agent CLIs, browser extension, and voice backend are optional and user-provided.
+Status and limitations: Early public control-plane/dashboard slice. It is not production-ready until authentication, authorization, production migrations/deployment hardening, and a completed privileged endpoint agent are added.
+
+Visual proof: docs/images/sha-control-plane-smoke.png contains an inspected dashboard smoke-test screenshot with no personal, customer, private infrastructure, token, or financial data.
 
 ## Selected public projects
 
-A-Term: Browser workspace for AI coding agents, shells, files, and notes. Repository: https://github.com/elias-leslie/a-term
+Aico: Linux desktop companion for terminal AI agents with floating widgets, isolated tmux sessions, a local FastAPI sidecar, click-to-context capture, optional browser/voice integrations, source installer, CI, and release hardening. Repository: https://github.com/elias-leslie/aico
 
-Security Hardening Automation: Security hardening automation platform for Windows and Linux endpoints with a FastAPI control plane and Next.js operator dashboard. Repository: https://github.com/elias-leslie/sha
+A-Term: Browser workspace for AI coding agents, shells, files, prompts, and notes. Repository: https://github.com/elias-leslie/a-term
 
-Agent Hub: Self-hosted control plane for multi-provider AI agents, sessions, credentials, prompts, and automation telemetry. Repository: https://github.com/elias-leslie/agent-hub
+Agent Hub: Self-hosted control plane for multi-provider AI agents, sessions, credentials, prompts, memory, and automation telemetry. Repository: https://github.com/elias-leslie/agent-hub
 
-Portfolio AI: Full-stack investment intelligence workspace with FastAPI, Next.js, PostgreSQL, Redis, and Hatchet workflows. Portfolio materials do not show real balances, holdings, transactions, account IDs, or brokerage data. Repository: https://github.com/elias-leslie/portfolio-ai
+Portfolio AI: Full-stack investment intelligence workspace with FastAPI, Next.js, PostgreSQL, Redis, and Hatchet workflows. Portfolio materials do not show real balances, holdings, transactions, account IDs, brokerage names tied to real data, or live portfolio values. Repository: https://github.com/elias-leslie/portfolio-ai
+
+Portfolio: Public Markdown/PDF project showcase with safe visual proof and links to released repos. Repository: https://github.com/elias-leslie/portfolio
 
 ## Capability areas
 

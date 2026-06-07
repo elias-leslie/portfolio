@@ -2,50 +2,48 @@
 
 I build practical automation systems at the intersection of **AI automation, security automation, cyber security, agentic developer tooling, and full-stack infrastructure**. My work emphasizes local-first control planes, secure defaults, reproducible release paths, and operator-focused interfaces that turn complex workflows into auditable tools.
 
-I use agentic AI heavily, but I keep the engineering bar concrete: documented setup, real tests, runtime smoke checks, secret hygiene, and honest limitations.
+I use agentic AI heavily, but I keep the engineering bar concrete: documented setup, real tests, runtime smoke checks, secret hygiene, clean install verification, and honest limitations.
 
-## Featured public release: Aico
+![Portfolio project showcase overview](./docs/images/portfolio-showcase-overview.svg)
 
-**Aico** is a Linux desktop companion for terminal AI agents: floating widgets, isolated tmux sessions, a local FastAPI sidecar, click-to-context capture, and optional browser/voice integrations.
+## Featured public release: Security Hardening Automation (SHA)
 
-[Repository](https://github.com/elias-leslie/aico) · [Install docs](https://github.com/elias-leslie/aico/blob/main/docs/INSTALL.md) · [Security policy](https://github.com/elias-leslie/aico/blob/main/SECURITY.md)
+**SHA** is a clean-room security hardening automation platform for Windows and Linux endpoints. It combines a FastAPI control-plane API, a Next.js operator dashboard, deterministic installer-profile artifacts, generated API schemas, and curated public-source starter controls.
 
-![Aico public release smoke test visual](./docs/images/aico-release-smoke.svg)
+[Repository](https://github.com/elias-leslie/sha) · [README](https://github.com/elias-leslie/sha/blob/main/README.md) · [Security policy](https://github.com/elias-leslie/sha/blob/main/SECURITY.md)
+
+![SHA security control plane dashboard smoke test](./docs/images/sha-control-plane-smoke.png)
 
 **Case study**
 
-- **Problem:** Terminal AI agents are useful but fragmented across shells, browser context, desktop selection, and project state. A public release also needed clean install docs and proof that no private/internal material was exposed.
-- **Solution:** Aico wraps agent terminals in a desktop companion with a local-only sidecar API, source installer, optional integrations, and hardened public docs/config.
-- **Stack:** Electron, TypeScript, Vite, FastAPI, Python 3.13, tmux, uv, Node.js, browser extension APIs.
-- **What was built:** Floating desktop widgets, tmux-backed terminal sessions, FastAPI health/selection/widget APIs, optional speech-to-text websocket client, Chrome/Chromium extension, clean source installer, CI, Apache-2.0 release docs.
-- **Skills demonstrated:** Desktop integration, secure local service design, TypeScript/Python testing, Linux packaging realities, secret/history scanning, clean-room install verification.
-- **Security/automation/AI relevance:** Keeps sensitive workflow state local by default, uses loopback APIs, degrades when optional integrations are absent, and makes terminal agents faster to operate without handing them unnecessary access.
-- **Current status and limitations:** Public source release for single-user Linux desktops. Wayland/global shortcut support can be limited by desktop environment. Agent CLIs, browser extension, and voice backend are optional and user-provided.
+- **Problem:** Endpoint hardening often becomes a brittle mix of one-off scripts, undocumented baseline assumptions, risky remote access, and unclear rollback paths.
+- **Solution:** SHA models hardening as a bounded control plane: enroll endpoints, collect posture, browse curated controls, generate installer profiles, and route disruptive work through approval requests/grants.
+- **Stack:** FastAPI, Python 3.13, SQLAlchemy, Pydantic, Next.js 16, React 19, TypeScript, Vitest, pnpm, uv, SQLite for local development.
+- **What was built:** Backend APIs, dashboard pages for fleet/endpoints/controls/installers/approvals, deterministic Linux/Windows bootstrap artifacts, generated JSON Schemas, Apache-2.0 public release docs, CI, and a clean public control-pack path.
+- **Skills demonstrated:** Security automation design, public-source provenance cleanup, secret/history scanning, dependency vulnerability remediation, full-stack testing, browser/runtime smoke checks, and clean Proxmox install verification.
+- **Security/automation/AI relevance:** Keeps endpoint work bounded to typed hardening workflows, avoids arbitrary shell access, documents approval boundaries, and provides a foundation for supervised operator automation.
+- **Current status and limitations:** Early public control-plane/dashboard slice. It is not production-ready until authentication, authorization, production migrations/deployment hardening, and a completed privileged endpoint agent are added.
 
 ## Public project showcase
 
 ### Aico — desktop companion for terminal AI agents
 
 - **Repo:** <https://github.com/elias-leslie/aico>
-- **Built:** Electron desktop app, Python sidecar, tmux session orchestration, browser extension, source install path, CI, release hardening.
-- **Why it matters:** Demonstrates agentic tooling that is useful without relying on private infrastructure or cloud-only assumptions.
+- **Problem:** Terminal AI agents are useful but fragmented across shells, browser context, desktop selection, and project state.
+- **Solution:** Linux desktop companion with floating widgets, isolated tmux sessions, a local FastAPI sidecar, click-to-context capture, and optional browser/voice integrations.
+- **Stack/skills:** Electron, TypeScript, Vite, FastAPI, Python 3.13, tmux, uv, Node.js, browser extension APIs, source installer, CI, release hardening.
+- **Security/AI relevance:** Keeps sensitive workflow state local by default, uses loopback APIs, and degrades when optional integrations are absent.
+- **Status:** Public source release for single-user Linux desktops; Wayland/global shortcut support varies by desktop environment.
+
+![Aico public release smoke test visual](./docs/images/aico-release-smoke.svg)
 
 ### A-Term — browser workspace for AI coding agents
 
 - **Repo:** <https://github.com/elias-leslie/a-term>
-- **Problem:** Agentic coding often needs shells, files, notes, and workspace state in one browser-accessible environment.
-- **Solution:** A browser workspace for AI coding agents, shells, files, and notes.
+- **Problem:** Agentic coding often needs shells, files, notes, prompts, and workspace state in one browser-accessible environment.
+- **Solution:** Browser workspace for AI coding agents, shells, files, and notes.
 - **Stack/skills:** Python, web UI, terminal/session management, workspace orchestration, developer-experience tooling.
 - **Status:** Public project; capabilities depend on the local environment and installed agent CLIs.
-
-### Security Hardening Automation (SHA)
-
-- **Repo:** <https://github.com/elias-leslie/sha>
-- **Problem:** Endpoint hardening needs repeatable checks, staged rollout, operator visibility, and rollback paths.
-- **Solution:** Security hardening automation platform for Windows and Linux endpoints with a FastAPI control plane and Next.js operator dashboard.
-- **Stack/skills:** FastAPI, Next.js, endpoint security automation, policy/check orchestration, dashboard UX, evidence-oriented workflows.
-- **Security relevance:** Turns hardening into auditable automation instead of one-off scripts.
-- **Status:** Public project; production use requires environment-specific validation.
 
 ### Agent Hub — self-hosted control plane for AI agents
 
@@ -62,8 +60,16 @@ I use agentic AI heavily, but I keep the engineering bar concrete: documented se
 - **Problem:** Financial research workflows need repeatable ingestion, analysis, and reporting without exposing private holdings.
 - **Solution:** Full-stack investment intelligence workspace with FastAPI, Next.js, PostgreSQL, Redis, and Hatchet workflows.
 - **Stack/skills:** FastAPI, Next.js, PostgreSQL, Redis, workflow orchestration, data pipelines, UI reporting.
-- **Security/data note:** Portfolio materials use only public repo claims and do not show real balances, holdings, transactions, account IDs, or brokerage data.
+- **Security/data note:** Portfolio materials use only public repo claims and do not show real balances, holdings, transactions, account IDs, brokerage names tied to real data, or live portfolio values.
 - **Status:** Public project; users must configure their own data sources and secrets.
+
+### Portfolio repo — public proof hub
+
+- **Repo:** <https://github.com/elias-leslie/portfolio>
+- **Problem:** Public work needs a credible, hiring-focused hub that is polished without exposing proprietary/customer/private claims.
+- **Solution:** Markdown-first GitHub portfolio with project case studies, safe visual proof, PDF sources/exports, and links to public repos.
+- **Stack/skills:** GitHub README/Pages-style Markdown, maintainable PDF source, release screenshots/demo visuals, public-claim hygiene.
+- **Status:** Public portfolio repository; updated incrementally as projects are released.
 
 ## Capability areas
 

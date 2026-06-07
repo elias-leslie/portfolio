@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Elias Leslie portfolio project showcase overview</title>
+  <desc id="desc">A dark blue portfolio overview graphic showing public projects across AI automation, security automation, agentic tooling, and infrastructure.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#06111f"/>
+      <stop offset="0.55" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111827"/>
+      <stop offset="1" stop-color="#172554"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+    <style>
+      .small { font: 500 22px Inter, Arial, sans-serif; fill: #bfdbfe; letter-spacing: 3px; }
+      .title { font: 800 56px Inter, Arial, sans-serif; fill: #f8fafc; }
+      .sub { font: 400 26px Inter, Arial, sans-serif; fill: #cbd5e1; }
+      .card-title { font: 800 27px Inter, Arial, sans-serif; fill: #f8fafc; }
+      .card-text { font: 400 20px Inter, Arial, sans-serif; fill: #cbd5e1; }
+      .tag { font: 700 16px Inter, Arial, sans-serif; fill: #93c5fd; letter-spacing: 1.6px; }
+    </style>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <path d="M80 110 C280 20 410 150 600 90 C785 32 930 86 1120 42" fill="none" stroke="#38bdf8" stroke-width="2" opacity="0.22"/>
+  <path d="M90 610 C260 530 390 660 570 590 C780 510 920 640 1160 560" fill="none" stroke="#a78bfa" stroke-width="2" opacity="0.22"/>
+  <text x="72" y="88" class="small">PUBLIC ENGINEERING PORTFOLIO</text>
+  <text x="72" y="154" class="title">AI + security automation systems</text>
+  <text x="72" y="198" class="sub">Clean public repos, real install paths, tests, runtime smoke checks, and honest limitations.</text>
+  <g filter="url(#shadow)">
+    <rect x="72" y="265" width="348" height="188" rx="24" fill="url(#card)" stroke="#38bdf8" stroke-opacity="0.45"/>
+    <text x="104" y="316" class="tag">FEATURED RELEASE</text>
+    <text x="104" y="362" class="card-title">SHA</text>
+    <text x="104" y="396" class="card-text">Security hardening control plane</text>
+    <text x="104" y="427" class="card-text">FastAPI · Next.js · clean-room catalog</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="466" y="265" width="348" height="188" rx="24" fill="url(#card)" stroke="#f59e0b" stroke-opacity="0.45"/>
+    <text x="498" y="316" class="tag">AGENTIC TOOLING</text>
+    <text x="498" y="362" class="card-title">Aico + A-Term</text>
+    <text x="498" y="396" class="card-text">Desktop and browser workspaces</text>
+    <text x="498" y="427" class="card-text">for terminal AI agents</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="860" y="265" width="348" height="188" rx="24" fill="url(#card)" stroke="#22c55e" stroke-opacity="0.45"/>
+    <text x="892" y="316" class="tag">INFRASTRUCTURE</text>
+    <text x="892" y="362" class="card-title">Agent Hub</text>
+    <text x="892" y="396" class="card-text">Self-hosted routing, sessions,</text>
+    <text x="892" y="427" class="card-text">prompts, memory, and telemetry</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="270" y="490" width="488" height="112" rx="22" fill="#0f172a" stroke="#64748b" stroke-opacity="0.55"/>
+    <text x="302" y="536" class="card-title">Release discipline</text>
+    <text x="302" y="570" class="card-text">Secret scanning · public docs · CI · clean Proxmox installs</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="790" y="490" width="416" height="112" rx="22" fill="#0f172a" stroke="#64748b" stroke-opacity="0.55"/>
+    <text x="822" y="536" class="card-title">Full-stack proof</text>
+    <text x="822" y="570" class="card-text">FastAPI · Next.js · Electron · PostgreSQL/Redis-style services</text>
+  </g>
+</svg>
