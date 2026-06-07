@@ -1,3 +1,8 @@
+---
+layout: default
+title: Elias Leslie — AI, Security Automation, and Infrastructure Tooling
+---
+
 # Elias Leslie — AI, Security Automation, and Infrastructure Tooling
 
 I build practical automation systems at the intersection of **AI automation, security automation, cyber security, agentic developer tooling, and full-stack infrastructure**. My work emphasizes local-first control planes, secure defaults, reproducible release paths, and operator-focused interfaces that turn complex workflows into auditable tools.
