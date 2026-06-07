@@ -31,10 +31,10 @@
   <text x="72" y="198" class="sub">Clean public repos, real install paths, tests, runtime smoke checks, and honest limitations.</text>
   <g filter="url(#shadow)">
     <rect x="72" y="265" width="348" height="188" rx="24" fill="url(#card)" stroke="#38bdf8" stroke-opacity="0.45"/>
-    <text x="104" y="316" class="tag">FEATURED RELEASE</text>
-    <text x="104" y="362" class="card-title">SHA</text>
-    <text x="104" y="396" class="card-text">Security hardening control plane</text>
-    <text x="104" y="427" class="card-text">FastAPI · Next.js · clean-room catalog</text>
+    <text x="104" y="316" class="tag">AI ORCHESTRATION</text>
+    <text x="104" y="362" class="card-title" style="font-size:23px">SummitFlow + Agent Hub</text>
+    <text x="104" y="396" class="card-text">Task orchestration &amp; evidence,</text>
+    <text x="104" y="427" class="card-text">multi-provider agent control plane</text>
   </g>
   <g filter="url(#shadow)">
     <rect x="466" y="265" width="348" height="188" rx="24" fill="url(#card)" stroke="#f59e0b" stroke-opacity="0.45"/>
@@ -45,19 +45,19 @@
   </g>
   <g filter="url(#shadow)">
     <rect x="860" y="265" width="348" height="188" rx="24" fill="url(#card)" stroke="#22c55e" stroke-opacity="0.45"/>
-    <text x="892" y="316" class="tag">INFRASTRUCTURE</text>
-    <text x="892" y="362" class="card-title">Agent Hub</text>
-    <text x="892" y="396" class="card-text">Self-hosted routing, sessions,</text>
-    <text x="892" y="427" class="card-text">prompts, memory, and telemetry</text>
+    <text x="892" y="316" class="tag">SECURITY AUTOMATION</text>
+    <text x="892" y="362" class="card-title">SHA</text>
+    <text x="892" y="396" class="card-text">Endpoint hardening control plane,</text>
+    <text x="892" y="427" class="card-text">approvals and curated controls</text>
   </g>
   <g filter="url(#shadow)">
     <rect x="270" y="490" width="488" height="112" rx="22" fill="#0f172a" stroke="#64748b" stroke-opacity="0.55"/>
     <text x="302" y="536" class="card-title">Release discipline</text>
-    <text x="302" y="570" class="card-text">Secret scanning · public docs · CI · clean Proxmox installs</text>
+    <text x="302" y="570" class="card-text">Secret scanning · public docs · CI · clean installs</text>
   </g>
   <g filter="url(#shadow)">
     <rect x="790" y="490" width="416" height="112" rx="22" fill="#0f172a" stroke="#64748b" stroke-opacity="0.55"/>
     <text x="822" y="536" class="card-title">Full-stack proof</text>
-    <text x="822" y="570" class="card-text">FastAPI · Next.js · Electron · PostgreSQL/Redis-style services</text>
+    <text x="822" y="570" class="card-text">FastAPI · Next.js · Electron · Postgres/Redis</text>
   </g>
 </svg>
