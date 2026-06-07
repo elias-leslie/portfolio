@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Aico public release smoke test visual</title>
+  <desc id="desc">Sanitized demo visual showing Aico architecture and release verification results: no leaks, checks passing, Proxmox clean install passing, local sidecar health passing.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#101827"/>
+      <stop offset="0.55" stop-color="#1e1b4b"/>
+      <stop offset="1" stop-color="#0f766e"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.08"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="20" stdDeviation="28" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+    <style>
+      .title{font:700 52px ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;fill:#f8fafc}
+      .subtitle{font:500 25px ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;fill:#cbd5e1}
+      .label{font:700 23px ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;fill:#f8fafc}
+      .text{font:500 18px ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;fill:#dbeafe}
+      .mono{font:600 18px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#bbf7d0}
+      .muted{font:500 16px ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;fill:#94a3b8}
+      .pill{font:700 15px ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;fill:#052e2b}
+    </style>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <circle cx="1100" cy="90" r="210" fill="#14b8a6" opacity="0.16"/>
+  <circle cx="150" cy="650" r="260" fill="#38bdf8" opacity="0.12"/>
+
+  <text x="70" y="92" class="title">Aico public release</text>
+  <text x="72" y="132" class="subtitle">Linux desktop companion for terminal AI agents</text>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="180" width="520" height="360" rx="30" fill="url(#card)" stroke="#67e8f9" stroke-opacity="0.35"/>
+    <text x="110" y="235" class="label">Local-first architecture</text>
+    <rect x="110" y="270" width="170" height="64" rx="18" fill="#0f172a" stroke="#22d3ee" stroke-opacity="0.55"/>
+    <text x="134" y="309" class="text">Electron UI</text>
+    <rect x="340" y="270" width="170" height="64" rx="18" fill="#0f172a" stroke="#22d3ee" stroke-opacity="0.55"/>
+    <text x="364" y="309" class="text">FastAPI sidecar</text>
+    <path d="M280 302 H340" stroke="#67e8f9" stroke-width="4" stroke-linecap="round"/>
+    <rect x="110" y="385" width="170" height="64" rx="18" fill="#0f172a" stroke="#a7f3d0" stroke-opacity="0.55"/>
+    <text x="146" y="424" class="text">tmux agents</text>
+    <rect x="340" y="385" width="170" height="64" rx="18" fill="#0f172a" stroke="#a7f3d0" stroke-opacity="0.55"/>
+    <text x="365" y="424" class="text">Browser context</text>
+    <path d="M195 334 V385" stroke="#67e8f9" stroke-width="4" stroke-linecap="round"/>
+    <path d="M425 334 V385" stroke="#67e8f9" stroke-width="4" stroke-linecap="round"/>
+    <text x="110" y="500" class="muted">Loopback API by default · optional integrations fail safely</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="650" y="180" width="560" height="360" rx="30" fill="#020617" stroke="#bbf7d0" stroke-opacity="0.35"/>
+    <circle cx="695" cy="222" r="8" fill="#ef4444"/>
+    <circle cx="723" cy="222" r="8" fill="#f59e0b"/>
+    <circle cx="751" cy="222" r="8" fill="#22c55e"/>
+    <text x="690" y="270" class="mono">$ gitleaks git &amp;&amp; gitleaks dir</text>
+    <text x="710" y="305" class="mono">OK: no leaks found</text>
+    <text x="690" y="350" class="mono">$ npm run check</text>
+    <text x="710" y="385" class="mono">OK: lint · types · tests · build</text>
+    <text x="690" y="430" class="mono">$ clean Proxmox install smoke</text>
+    <text x="710" y="465" class="mono">OK: API health · Electron launch · logs clean</text>
+  </g>
+
+  <g>
+    <rect x="70" y="590" width="220" height="42" rx="21" fill="#99f6e4"/>
+    <text x="100" y="617" class="pill">Apache-2.0</text>
+    <rect x="315" y="590" width="260" height="42" rx="21" fill="#bfdbfe"/>
+    <text x="344" y="617" class="pill">Public GitHub release</text>
+    <rect x="600" y="590" width="300" height="42" rx="21" fill="#ddd6fe"/>
+    <text x="628" y="617" class="pill">Sanitized demo visual</text>
+  </g>
+</svg>
