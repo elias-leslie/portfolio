@@ -82,6 +82,8 @@ Public repositories spanning AI automation, security automation, agentic develop
 
 [Repository](https://github.com/elias-leslie/portfolio-ai)
 
+![Portfolio AI investing watchlist](./docs/images/portfolio-ai-watchlist.png)
+
 - **Problem:** Financial research workflows need repeatable ingestion, analysis, and reporting without exposing private holdings.
 - **Solution:** A full-stack investment intelligence workspace built on FastAPI, Next.js, PostgreSQL, Redis, and Hatchet workflows.
 - **Stack:** FastAPI, Next.js, PostgreSQL, Redis, Hatchet, workflow orchestration, data pipelines.
