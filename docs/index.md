@@ -61,7 +61,7 @@ Public repositories spanning AI automation, security automation, agentic develop
 
 [Repository](https://github.com/elias-leslie/aico)
 
-![Aico public release smoke test visual](./images/aico-release-smoke.svg)
+![Aico lantern — a floating terminal widget running a live shell on the Linux desktop](./images/aico-hero.png)
 
 - **Problem:** Terminal AI agents are useful but fragmented across shells, browser context, desktop selection, and project state.
 - **Solution:** A Linux desktop companion with floating widgets, isolated tmux sessions, a local FastAPI sidecar, click-to-context capture, and optional browser/voice integrations.
