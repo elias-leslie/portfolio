@@ -1,6 +1,6 @@
 # Elias Leslie — Detailed Portfolio
 
-Last updated: 2026-06-07
+Last updated: 2026-06-09
 
 ## Summary
 
@@ -61,26 +61,26 @@ Linux desktop companion for terminal AI agents. Repository: https://github.com/e
 
 ## A-Term
 
-Browser workspace for AI coding agents, shells, files, prompts, and notes. Repository: https://github.com/elias-leslie/a-term
+Self-hosted browser workspace for AI coding agents, shells, files, prompts, and notes. Repository: https://github.com/elias-leslie/a-term
 
-- **Problem:** Agentic coding often needs shells, files, prompts, notes, and workspace state in one browser-accessible environment.
-- **Solution:** A browser workspace that brings shells, files, prompts, and notes together for AI coding agents.
-- **Stack:** Python, web UI, terminal/session management, workspace orchestration.
-- **Built:** A browser-accessible workspace with terminal/session management, file and note handling, and prompt management for agent-driven development.
-- **Skills demonstrated:** Terminal/session management, workspace orchestration, and developer-experience tooling.
-- **Security and AI relevance:** Centralizes agent working context in one environment; capabilities depend on the local environment and installed agent CLIs.
-- **Status:** Public project; capabilities depend on the local environment and installed agent CLIs.
+- **Problem:** Agentic coding needs shells, files, prompts, and notes in one browser-accessible environment, and naive web terminals lose their session the moment the tab closes.
+- **Solution:** A self-hosted browser workspace that runs multiple persistent, tmux-backed terminal sessions (Claude Code, Codex, Gemini CLI, Hermes, OpenCode, Pi, and shells) side by side in a resizable pane grid, with a file browser, a notes/prompt library, voice input, and full mobile support.
+- **Stack:** FastAPI, Python 3.13, SQLAlchemy, Alembic, PostgreSQL, Next.js 16, React 19, TypeScript, xterm.js (WebGL), tmux, Tailwind CSS 4, pnpm, uv.
+- **Built:** WebSocket PTY terminals over tmux for crash-proof sessions; up to six resizable panes with detach-to-window; per-pane dual shell/agent mode with built-in tool presets and custom tools; a sandboxed file browser with validated uploads; a notes/prompt library with version history and Agent-Hub-backed prompt cleaning; browser-native voice input; an on-screen keyboard and PWA install for mobile; and three auth modes (loopback/password/proxy) with security headers, CSP, and rate limiting.
+- **Skills demonstrated:** Real-time WebSocket/PTY streaming with backpressure, terminal/session orchestration, full-stack developer-experience tooling, mobile/PWA support, and secure-by-default remote access.
+- **Security and AI relevance:** Ships loopback-only by default, isolates the file browser against path traversal, and centralizes agent working context locally instead of in a hosted service.
+- **Status:** Public project. Runs standalone, or pairs with SummitFlow and Agent Hub for shared projects, prompt cleaning, and a model catalog.
 
 ## Portfolio AI
 
-Full-stack investment intelligence workspace. Repository: https://github.com/elias-leslie/portfolio-ai
+Self-hosted, full-stack investment intelligence workspace. Repository: https://github.com/elias-leslie/portfolio-ai
 
 - **Problem:** Financial research workflows need repeatable ingestion, analysis, and reporting without exposing private holdings.
-- **Solution:** A full-stack investment intelligence workspace built on FastAPI, Next.js, PostgreSQL, Redis, and Hatchet workflows.
-- **Stack:** FastAPI, Next.js, PostgreSQL, Redis, Hatchet, workflow orchestration, data pipelines.
-- **Built:** Ingestion and analysis pipelines, workflow orchestration, and UI reporting over a full-stack backend.
-- **Skills demonstrated:** Data pipelines, workflow orchestration, full-stack reporting UI, and privacy-aware public documentation.
-- **Security and AI relevance:** Portfolio materials use only public repo claims and do not show real balances, holdings, transactions, account IDs, brokerage names tied to real data, or live portfolio values.
+- **Solution:** A self-hosted, full-stack investment intelligence workspace that tracks portfolios and tax lots, scores a watchlist from market data, news, technicals, and fundamentals, computes a macro deployment gate, and optionally routes AI analysis through an Agent Hub companion — all on data you host.
+- **Stack:** FastAPI, Python 3.13, SQLAlchemy, Next.js 16, React 19, PostgreSQL, Redis, Hatchet, pandas, scikit-learn, pandas-ta; yfinance, CBOE, FRED, and SEC EDGAR data plus optional paid market-data APIs.
+- **Built:** Portfolio/tax-lot/transaction tracking with cost basis, P&L, tax-loss harvesting (wash-sale checks), and IPS drift/rebalance; a multi-pillar watchlist scorer with plain-language narratives; a macro deployment gate (FULL_DEPLOY/REDUCED/DEFENSIVE) with walk-forward and Monte Carlo backtests; ~63 cron-scheduled Hatchet workflows; household money, document-intake, budgeting, and retirement (Monte Carlo) surfaces with encrypted Plaid/SnapTrade linking; an AI investment-committee and thesis pipeline routed entirely through Agent Hub (no hardcoded model IDs); and a read-only MCP server.
+- **Skills demonstrated:** Multi-source data pipelines, quantitative/technical analysis, lightweight ML, workflow orchestration at scale, full-stack reporting UI, and privacy-aware public documentation.
+- **Security and AI relevance:** Boots without optional keys (degrading rather than failing), encrypts source and broker credentials at rest, keeps all LLM access behind Agent Hub, and uses only public claims with no real balances, holdings, transactions, account IDs, brokerage names tied to real data, or live portfolio values.
 - **Status:** Public project; users must configure their own data sources and secrets.
 
 ## Portfolio
