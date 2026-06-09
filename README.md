@@ -19,7 +19,7 @@ Public repositories spanning AI automation, security automation, agentic develop
 - **Problem:** AI-assisted development scatters task state, quality gates, and verification evidence across one-off scripts and chat logs, so it is hard to see what was actually built, checked, and proven across projects.
 - **Solution:** A local-first control plane that tracks tasks, subtasks, steps, and dependencies; runs quality gates and code-health scans; drives autonomous execution hooks and browser checks; and keeps operator-visible verification evidence. Built for developers running their own agent tooling, not as a hosted SaaS.
 - **Stack:** FastAPI, Python 3.13, SQLAlchemy, Alembic, Next.js 16, React, TypeScript, PostgreSQL, Redis, Hatchet, pnpm, uv.
-- **What was built:** A FastAPI backend and Next.js operator UI for project/task state, Hatchet-driven scheduled and event-driven workflows, the `st` CLI for task/project/check/database/backup/browser/workflow operations, UI/API smoke-test evidence capture, and an Apache-2.0 public release with CI, a Docker Compose source stack, and a security policy.
+- **What was built:** A FastAPI backend (~33 routers) and Next.js operator UI; the `st` CLI (~36 command groups, ~290 subcommands) spanning tasks, quality gates (ruff/types/pytest/biome/tsc/CodeQL), version control (jj-first), services, databases, browser/UI automation, agents, and backups; ~36 Hatchet workflows including an autonomous ideation→execution→review pipeline and self-healing; proof-it-ran evidence capture (UI screenshots, route/health status, console-error counts); Btrfs snapshots and SMB/Veeam-targeted backups; and an Apache-2.0 public release with CI, a Docker Compose source stack, and a security policy.
 - **Skills demonstrated:** Full-stack system design, workflow orchestration, CLI and developer-tooling design, runtime smoke verification, and public release discipline (secret/history scanning, dependency remediation, clean install verification).
 - **Security/automation/AI relevance:** Keeps agent work local-first and auditable, and degrades clearly when optional integrations (Agent Hub, Hatchet, browser runtime, web push, SMB backups) are absent instead of exposing credentials or crashing unrelated pages.
 - **Status:** Public Apache-2.0 release for developers running their own agent tooling. Pairs with Agent Hub for routed AI completions and shared memory, but runs standalone.
@@ -31,9 +31,9 @@ Public repositories spanning AI automation, security automation, agentic develop
 ![Agent Hub command-center dashboard](./docs/images/agent-hub-dashboard.png)
 
 - **Problem:** Most agent demos stop at chat. Running agents as real infrastructure needs provider routing, persistent memory, sessions, access control, and cost/latency visibility in one governed place.
-- **Solution:** A self-hosted control plane that adds the operational layer: unified completions and streaming across configured providers, PostgreSQL-backed memory and context injection, named agents/personas, session history, request logs, routing telemetry, and operator dashboards.
-- **Stack:** FastAPI, Python 3.13, Next.js 16, React, TypeScript, PostgreSQL with pgvector, Redis, Hatchet, pnpm, uv, plus an async Python SDK.
-- **What was built:** Provider adapters for Gemini, OpenAI, OpenRouter, Kimi, MiniMax, DeepSeek, xAI, and local OpenAI-compatible endpoints; memory/session/telemetry surfaces; client registration and access-control for companion apps; a Python SDK for completions, SSE streaming, and stateful sessions; and an Apache-2.0 release with public-safe screenshots, CI, and a security policy.
+- **Solution:** A self-hosted control plane that adds the operational layer: unified completions and streaming across many providers, multi-agent orchestration and server-side tool execution, a pgvector memory-first store with context injection, named agents/personas, session history, request/cost telemetry, access control, and operator dashboards.
+- **Stack:** FastAPI, Python 3.13, Next.js 16, React, TypeScript, PostgreSQL with pgvector, Redis, Hatchet, pnpm, uv, plus a sync + async Python SDK.
+- **What was built:** Provider routing across Gemini, OpenAI, OpenRouter, DeepSeek, Kimi/Moonshot, MiniMax, xAI, Zhipu (GLM), NVIDIA, Cloudflare Workers AI, OpenAI Codex, and local OpenAI-compatible endpoints, plus image generation across four vendors; a pgvector memory-first store with tiered context injection; multi-agent orchestration (committee, maker-checker, chain, parallel) and an agentic server-side tool loop; a 6-axis model-benchmark catalog, request/cost telemetry, client registration and access control with budgets/quotas, encrypted credentials and OAuth, and a self-improving persona heartbeat; a sync + async Python SDK; and an Apache-2.0 release with public-safe screenshots, CI, and a security policy.
 - **Skills demonstrated:** Multi-provider routing, credential boundaries, memory/session infrastructure, SDK design, operability and observability, and public release discipline.
 - **Security/automation/AI relevance:** Isolates provider credentials behind access-control surfaces, boots without provider keys (dashboards, health, and sessions stay available), and fails clearly when optional integrations are unconfigured.
 - **Status:** Public Apache-2.0 release. Works standalone and as SummitFlow's routed-agent backend. Expose beyond loopback only behind a reverse proxy with strong client/internal secrets.
@@ -47,7 +47,7 @@ Public repositories spanning AI automation, security automation, agentic develop
 - **Problem:** Endpoint hardening often becomes a brittle mix of one-off scripts, undocumented baseline assumptions, risky remote access, and unclear rollback paths.
 - **Solution:** SHA models hardening as a bounded control plane: enroll endpoints, collect posture, browse curated controls, generate installer profiles, and route disruptive work through approval requests/grants.
 - **Stack:** FastAPI, Python 3.13, SQLAlchemy, Pydantic, Next.js 16, React 19, TypeScript, Vitest, pnpm, uv, SQLite for local development.
-- **What was built:** Backend APIs, dashboard pages for fleet/endpoints/controls/installers/approvals, deterministic Linux/Windows bootstrap artifacts, generated JSON Schemas, Apache-2.0 public release docs, CI, and a clean public control-pack path.
+- **What was built:** Backend APIs and dashboard pages for fleet/endpoints/controls/installers/approvals; deterministic Linux/Windows bootstrap reporters that run real read-only posture checks (firewall, SSH, root lock, auto-updates / Defender, BitLocker, Secure Boot) and report through a full enroll→heartbeat→posture cycle; a typed, human-in-the-loop approval workflow with bounded grant TTLs and append-only audit; 3 curated control packs (9 controls) from public NIST/DISA/CISA-NSA guidance with 18 generated JSON Schemas; and an Apache-2.0 release with CI and a clean public control-pack path.
 - **Skills demonstrated:** Security automation design, public-source provenance cleanup, secret/history scanning, dependency vulnerability remediation, full-stack testing, browser/runtime smoke checks, and clean Proxmox install verification.
 - **Security/automation/AI relevance:** Keeps endpoint work bounded to typed hardening workflows, avoids arbitrary shell access, documents approval boundaries, and provides a foundation for supervised operator automation.
 - **Status:** Early public control-plane/dashboard slice. It is not production-ready until authentication, authorization, production migrations/deployment hardening, and a completed privileged endpoint agent are added.
@@ -59,9 +59,9 @@ Public repositories spanning AI automation, security automation, agentic develop
 ![Aico lantern — a floating desktop widget running a Claude Code session on Linux](./docs/images/aico-hero.png)
 
 - **Problem:** Terminal AI agents are useful but fragmented across shells, browser context, desktop selection, and project state.
-- **Solution:** A Linux desktop companion with floating widgets, isolated tmux sessions, a local FastAPI sidecar, click-to-context capture, and optional browser/voice integrations.
-- **Stack:** Electron, TypeScript, Vite, FastAPI, Python 3.13, tmux, uv, Node.js, browser extension APIs.
-- **What was built:** A desktop companion app, a local FastAPI sidecar, click-to-context capture, optional browser/voice integrations, a source installer, CI, and release hardening.
+- **Solution:** A Linux desktop companion that wraps seven terminal AI CLIs (Claude Code, Codex, opencode, Gemini CLI, Pi, Hermes, shells) in persistent tmux-backed "lantern" widgets, with a command palette, per-agent context-mandate verification, a loopback FastAPI sidecar, click-to-context capture, and optional browser/voice integrations.
+- **Stack:** Electron, TypeScript, Vite, xterm.js, node-pty, FastAPI, Python 3.13, tmux, uv, Node.js, MV3 browser extension APIs.
+- **What was built:** Frameless terminal widgets backed by persistent per-widget tmux sessions; a searchable command palette and pinned controls; per-agent context-mandate verification (✓/⚠ badges); a loopback FastAPI sidecar and MV3 browser extension for click-to-context capture; optional desktop window/region/OCR grab and voice dictation; and an AppImage build with a bundled PyInstaller sidecar, CI, and release hardening (SHA256SUMS + build provenance).
 - **Skills demonstrated:** Desktop/Electron integration, local sidecar API design, tmux/session orchestration, browser-context capture, and release hardening.
 - **Security/automation/AI relevance:** Keeps sensitive workflow state local by default, uses loopback APIs, and degrades when optional integrations are absent.
 - **Status:** Public source release for single-user Linux desktops; Wayland/global shortcut support varies by desktop environment.
@@ -70,13 +70,13 @@ Public repositories spanning AI automation, security automation, agentic develop
 
 [Repository](https://github.com/elias-leslie/a-term)
 
-- **Problem:** Agentic coding often needs shells, files, prompts, notes, and workspace state in one browser-accessible environment.
-- **Solution:** A browser workspace that brings shells, files, prompts, and notes together for AI coding agents.
-- **Stack:** Python, web UI, terminal/session management, workspace orchestration.
-- **What was built:** A browser-accessible workspace with terminal/session management, file and note handling, and prompt management for agent-driven development.
-- **Skills demonstrated:** Terminal/session management, workspace orchestration, and developer-experience tooling.
-- **Security/automation/AI relevance:** Centralizes agent working context in one environment; capabilities depend on the local environment and installed agent CLIs.
-- **Status:** Public project; capabilities depend on the local environment and installed agent CLIs.
+- **Problem:** Agentic coding needs shells, files, prompts, and notes in one browser-accessible environment, and naive web terminals lose their session the moment the tab closes.
+- **Solution:** A self-hosted browser workspace that runs multiple persistent, tmux-backed terminal sessions (Claude Code, Codex, Gemini CLI, Hermes, OpenCode, Pi, and shells) side by side in a resizable pane grid, with a file browser, a notes/prompt library, voice input, and full mobile support.
+- **Stack:** FastAPI, Python 3.13, SQLAlchemy, Alembic, PostgreSQL, Next.js 16, React 19, TypeScript, xterm.js (WebGL), tmux, Tailwind CSS 4, pnpm, uv.
+- **What was built:** WebSocket PTY terminals over tmux for crash-proof sessions; up to six resizable panes with detach-to-window; per-pane dual shell/agent mode with built-in tool presets and custom tools; a sandboxed file browser with validated uploads; a notes/prompt library with version history and Agent-Hub-backed prompt cleaning; browser-native voice input; an on-screen keyboard and PWA install for mobile; and three auth modes (loopback/password/proxy) with security headers, CSP, and rate limiting.
+- **Skills demonstrated:** Real-time WebSocket/PTY streaming with backpressure, terminal/session orchestration, full-stack developer-experience tooling, mobile/PWA support, and secure-by-default remote access.
+- **Security/automation/AI relevance:** Ships loopback-only by default, isolates the file browser against path traversal, and centralizes agent working context locally instead of in a hosted service.
+- **Status:** Public project. Runs standalone, or pairs with SummitFlow and Agent Hub for shared projects, prompt cleaning, and a model catalog.
 
 ### Portfolio AI — investment intelligence workspace
 
@@ -85,11 +85,11 @@ Public repositories spanning AI automation, security automation, agentic develop
 ![Portfolio AI investing watchlist](./docs/images/portfolio-ai-watchlist.png)
 
 - **Problem:** Financial research workflows need repeatable ingestion, analysis, and reporting without exposing private holdings.
-- **Solution:** A full-stack investment intelligence workspace built on FastAPI, Next.js, PostgreSQL, Redis, and Hatchet workflows.
-- **Stack:** FastAPI, Next.js, PostgreSQL, Redis, Hatchet, workflow orchestration, data pipelines.
-- **What was built:** Ingestion and analysis pipelines, workflow orchestration, and UI reporting over a full-stack backend.
-- **Skills demonstrated:** Data pipelines, workflow orchestration, full-stack reporting UI, and privacy-aware public documentation.
-- **Security/automation/AI relevance:** Portfolio materials use only public repo claims and do not show real balances, holdings, transactions, account IDs, brokerage names tied to real data, or live portfolio values.
+- **Solution:** A self-hosted, full-stack investment intelligence workspace that tracks portfolios and tax lots, scores a watchlist from market data, news, technicals, and fundamentals, computes a macro deployment gate, and optionally routes AI analysis through an Agent Hub companion — all on data you host.
+- **Stack:** FastAPI, Python 3.13, SQLAlchemy, Next.js 16, React 19, PostgreSQL, Redis, Hatchet, pandas, scikit-learn, pandas-ta; yfinance, CBOE, FRED, and SEC EDGAR data plus optional paid market-data APIs.
+- **What was built:** Portfolio/tax-lot/transaction tracking with cost basis, P&L, tax-loss harvesting (wash-sale checks), and IPS drift/rebalance; a multi-pillar watchlist scorer with plain-language narratives; a macro deployment gate (FULL_DEPLOY/REDUCED/DEFENSIVE) with walk-forward and Monte Carlo backtests; ~63 cron-scheduled Hatchet workflows; household money, document-intake, budgeting, and retirement (Monte Carlo) surfaces with encrypted Plaid/SnapTrade linking; an AI investment-committee and thesis pipeline routed entirely through Agent Hub (no hardcoded model IDs); and a read-only MCP server.
+- **Skills demonstrated:** Multi-source data pipelines, quantitative/technical analysis, lightweight ML, workflow orchestration at scale, full-stack reporting UI, and privacy-aware public documentation.
+- **Security/automation/AI relevance:** Boots without optional keys (degrading rather than failing), encrypts source and broker credentials at rest, keeps all LLM access behind Agent Hub, and uses only public claims with no real balances, holdings, transactions, account IDs, brokerage names tied to real data, or live portfolio values.
 - **Status:** Public project; users must configure their own data sources and secrets.
 
 ### Portfolio — public proof hub
@@ -124,4 +124,4 @@ Public repositories spanning AI automation, security automation, agentic develop
 - LinkedIn: <https://linkedin.com/in/elias-leslie>
 - GitHub: <https://github.com/elias-leslie>
 
-_Last updated: 2026-06-07_
+_Last updated: 2026-06-09_
