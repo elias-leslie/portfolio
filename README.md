@@ -84,7 +84,7 @@ Public repositories spanning AI automation, security automation, agentic develop
 
 [Repository](https://github.com/elias-leslie/portfolio-ai)
 
-![Portfolio AI investing watchlist](./docs/images/portfolio-ai-watchlist.png)
+![Portfolio AI investing watchlist](./docs/images/portfolio-ai-dashboard.png)
 
 - **Problem:** Financial research workflows need repeatable ingestion, analysis, and reporting without exposing private holdings.
 - **Solution:** A self-hosted, full-stack investment intelligence workspace that tracks portfolios and tax lots, scores a watchlist from market data, news, technicals, and fundamentals, computes a macro deployment gate, and optionally routes AI analysis through an Agent Hub companion — all on data you host.
