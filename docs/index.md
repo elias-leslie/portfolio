@@ -24,7 +24,7 @@ Public repositories spanning AI automation, security automation, agentic develop
 - **Problem:** AI-assisted development scatters task state, quality gates, and verification evidence across one-off scripts and chat logs, so it is hard to see what was actually built, checked, and proven across projects.
 - **Solution:** A local-first control plane that tracks tasks, subtasks, steps, and dependencies; runs quality gates and code-health scans; drives autonomous execution hooks and browser checks; and keeps operator-visible verification evidence. Built for developers running their own agent tooling, not as a hosted SaaS.
 - **Stack:** FastAPI, Python 3.13, SQLAlchemy, Alembic, Next.js 16, React, TypeScript, PostgreSQL, Redis, Hatchet, pnpm, uv.
-- **What was built:** A FastAPI backend (~33 routers) and Next.js operator UI; the `st` CLI (~36 command groups, ~290 subcommands) spanning tasks, quality gates (ruff/types/pytest/biome/tsc/CodeQL), version control (jj-first), services, databases, browser/UI automation, agents, and backups; ~36 Hatchet workflows including an autonomous ideation→execution→review pipeline and self-healing; proof-it-ran evidence capture (UI screenshots, route/health status, console-error counts); Btrfs snapshots and SMB/Veeam-targeted backups; and an Apache-2.0 public release with CI, a Docker Compose source stack, and a security policy.
+- **What was built:** A FastAPI backend (~33 routers) and Next.js operator UI; the `st` CLI (~36 command groups, ~290 subcommands) spanning tasks, quality gates (ruff/types/pytest/biome/tsc/CodeQL), version control (jj-first), services, databases, browser/UI automation, agents, and backups; ~36 Hatchet workflows including an autonomous ideation→execution→review pipeline and self-healing; proof-it-ran evidence capture (UI screenshots, route/health status, console-error counts); Btrfs snapshots and SMB/Veeam-targeted backups; `summitflow-host-guardian` independent host monitoring; and an Apache-2.0 public release with CI, a Docker Compose source stack, and a security policy.
 - **Skills demonstrated:** Full-stack system design, workflow orchestration, CLI and developer-tooling design, runtime smoke verification, and public release discipline (secret/history scanning, dependency remediation, clean install verification).
 - **Security/automation/AI relevance:** Keeps agent work local-first and auditable, and degrades clearly when optional integrations (Agent Hub, Hatchet, browser runtime, web push, SMB backups) are absent instead of exposing credentials or crashing unrelated pages.
 - **Status:** Public Apache-2.0 release for developers running their own agent tooling. Pairs with Agent Hub for routed AI completions and shared memory, but runs standalone.
@@ -55,7 +55,7 @@ Public repositories spanning AI automation, security automation, agentic develop
 - **What was built:** Backend APIs and dashboard pages for fleet/endpoints/controls/installers/approvals; deterministic Linux/Windows bootstrap reporters that run real read-only posture checks (firewall, SSH, root lock, auto-updates / Defender, BitLocker, Secure Boot) and report through a full enroll→heartbeat→posture cycle; a typed, human-in-the-loop approval workflow with bounded grant TTLs and append-only audit; 3 curated control packs (9 controls) from public NIST/DISA/CISA-NSA guidance with 18 generated JSON Schemas; and an Apache-2.0 release with CI and a clean public control-pack path.
 - **Skills demonstrated:** Security automation design, public-source provenance cleanup, secret/history scanning, dependency vulnerability remediation, full-stack testing, browser/runtime smoke checks, and clean Proxmox install verification.
 - **Security/automation/AI relevance:** Keeps endpoint work bounded to typed hardening workflows, avoids arbitrary shell access, documents approval boundaries, and provides a foundation for supervised operator automation.
-- **Status:** Early public control-plane/dashboard slice. It is not production-ready until authentication, authorization, production migrations/deployment hardening, and a completed privileged endpoint agent are added.
+- **Status:** Public security control-plane proof-of-concept featuring 3 NIST/DISA/CISA control packs (9 controls), 18 validated JSON Schemas, human-in-the-loop approval workflows with audit logging, and clean Proxmox deployment verification.
 
 ### Aico — desktop companion for terminal AI agents
 
@@ -74,6 +74,8 @@ Public repositories spanning AI automation, security automation, agentic develop
 ### A-Term — browser workspace for AI coding agents
 
 [Repository](https://github.com/elias-leslie/a-term)
+
+![A-Term browser workspace](./images/a-term-workspace.png)
 
 - **Problem:** Agentic coding needs shells, files, prompts, and notes in one browser-accessible environment, and naive web terminals lose their session the moment the tab closes.
 - **Solution:** A self-hosted browser workspace that runs multiple persistent, tmux-backed terminal sessions (Claude Code, Codex, Gemini CLI, Hermes, OpenCode, Pi, and shells) side by side in a resizable pane grid, with a file browser, a notes/prompt library, voice input, and full mobile support.
@@ -119,6 +121,8 @@ Public repositories spanning AI automation, security automation, agentic develop
 
 ## Downloads
 
+- [Security Architect Resume (PDF)](./Resume_Elias_Leslie_Architecture.pdf)
+- [Security Architect Resume (Markdown)](./Resume_Elias_Leslie_Architecture.md)
 - [Detailed portfolio PDF](./Detailed_Portfolio.pdf)
 - [Security automation summary PDF](./Elias_Leslie_Portfolio_Summary_Security_Automation.pdf)
 - [Detailed PDF Markdown source](./Detailed_Portfolio.md)
@@ -129,4 +133,4 @@ Public repositories spanning AI automation, security automation, agentic develop
 - LinkedIn: <https://linkedin.com/in/elias-leslie>
 - GitHub: <https://github.com/elias-leslie>
 
-_Last updated: 2026-06-09_
+_Last updated: 2026-08-07_
