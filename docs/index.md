@@ -47,7 +47,7 @@ Public repositories spanning AI automation, security automation, agentic develop
 
 [Repository](https://github.com/elias-leslie/sha) · [README](https://github.com/elias-leslie/sha/blob/main/README.md) · [Security policy](https://github.com/elias-leslie/sha/blob/main/SECURITY.md)
 
-![SHA security control plane dashboard smoke test](./images/sha-control-plane-smoke.png)
+![SHA security control plane dashboard smoke test](./images/sha-control-plane-dashboard.png)
 
 - **Problem:** Endpoint hardening often becomes a brittle mix of one-off scripts, undocumented baseline assumptions, risky remote access, and unclear rollback paths.
 - **Solution:** SHA models hardening as a bounded control plane: enroll endpoints, collect posture, browse curated controls, generate installer profiles, and route disruptive work through approval requests/grants.
