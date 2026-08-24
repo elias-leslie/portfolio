@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
   <title id="title">Elias Leslie portfolio project showcase overview</title>
-  <desc id="desc">A dark blue portfolio overview graphic showing public projects across AI automation, security automation, agentic tooling, and infrastructure.</desc>
+  <desc id="desc">A dark blue portfolio overview graphic showing six public projects across AI orchestration, agentic tooling, security automation, and market intelligence.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#06111f"/>
@@ -51,13 +51,24 @@
     <text x="892" y="427" class="card-text">approvals and curated controls</text>
   </g>
   <g filter="url(#shadow)">
-    <rect x="270" y="490" width="488" height="112" rx="22" fill="#0f172a" stroke="#64748b" stroke-opacity="0.55"/>
-    <text x="302" y="536" class="card-title">Release discipline</text>
-    <text x="302" y="570" class="card-text">Secret scanning · public docs · CI · clean installs</text>
+    <rect x="72" y="490" width="348" height="170" rx="24" fill="url(#card)" stroke="#a78bfa" stroke-opacity="0.45"/>
+    <text x="104" y="538" class="tag">MARKET INTELLIGENCE</text>
+    <text x="104" y="582" class="card-title">Portfolio AI</text>
+    <text x="104" y="616" class="card-text">Deterministic investing,</text>
+    <text x="104" y="644" class="card-text">household and rewards engine</text>
   </g>
   <g filter="url(#shadow)">
-    <rect x="790" y="490" width="416" height="112" rx="22" fill="#0f172a" stroke="#64748b" stroke-opacity="0.55"/>
-    <text x="822" y="536" class="card-title">Full-stack proof</text>
-    <text x="822" y="570" class="card-text">FastAPI · Next.js · Electron · Postgres/Redis</text>
+    <rect x="466" y="490" width="348" height="170" rx="24" fill="#0f172a" stroke="#64748b" stroke-opacity="0.55"/>
+    <text x="498" y="538" class="tag">RELEASE DISCIPLINE</text>
+    <text x="498" y="582" class="card-title">Apache-2.0, verifiable</text>
+    <text x="498" y="616" class="card-text">Secret scanning · CI ·</text>
+    <text x="498" y="644" class="card-text">docs · clean-install checks</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="860" y="490" width="348" height="170" rx="24" fill="#0f172a" stroke="#64748b" stroke-opacity="0.55"/>
+    <text x="892" y="538" class="tag">FULL-STACK PROOF</text>
+    <text x="892" y="582" class="card-title">Built end to end</text>
+    <text x="892" y="616" class="card-text">FastAPI · Next.js · Electron ·</text>
+    <text x="892" y="644" class="card-text">Go · Postgres/pgvector · Redis</text>
   </g>
 </svg>
