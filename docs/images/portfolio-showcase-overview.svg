@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
   <title id="title">Elias Leslie portfolio project showcase overview</title>
-  <desc id="desc">A dark blue portfolio overview graphic showing six public projects across AI orchestration, agentic tooling, security automation, and market intelligence.</desc>
+  <desc id="desc">A dark blue portfolio overview graphic showing seven public projects across AI orchestration, agentic tooling, security automation, and market intelligence.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#06111f"/>
@@ -46,9 +46,9 @@
   <g filter="url(#shadow)">
     <rect x="860" y="265" width="348" height="188" rx="24" fill="url(#card)" stroke="#22c55e" stroke-opacity="0.45"/>
     <text x="892" y="316" class="tag">SECURITY AUTOMATION</text>
-    <text x="892" y="362" class="card-title">SHA</text>
-    <text x="892" y="396" class="card-text">Endpoint hardening control plane,</text>
-    <text x="892" y="427" class="card-text">approvals and curated controls</text>
+    <text x="892" y="362" class="card-title">Ominull + SHA</text>
+    <text x="892" y="396" class="card-text">Ring-0 threat nullification,</text>
+    <text x="892" y="427" class="card-text">endpoint hardening &amp; mesh isolation</text>
   </g>
   <g filter="url(#shadow)">
     <rect x="72" y="490" width="348" height="170" rx="24" fill="url(#card)" stroke="#a78bfa" stroke-opacity="0.45"/>
@@ -68,7 +68,7 @@
     <rect x="860" y="490" width="348" height="170" rx="24" fill="#0f172a" stroke="#64748b" stroke-opacity="0.55"/>
     <text x="892" y="538" class="tag">FULL-STACK PROOF</text>
     <text x="892" y="582" class="card-title">Built end to end</text>
-    <text x="892" y="616" class="card-text">FastAPI · Next.js · Electron ·</text>
-    <text x="892" y="644" class="card-text">Go · Postgres/pgvector · Redis</text>
+    <text x="892" y="616" class="card-text">WFP (C) · eBPF · Go · FastAPI ·</text>
+    <text x="892" y="644" class="card-text">Next.js · Electron · Postgres/pgvector</text>
   </g>
 </svg>

@@ -16,7 +16,7 @@ The projects below are what that experience looks like when I build in the open.
 
 ## Projects
 
-Six public platforms released under Apache-2.0, each a standalone repository with documented setup, real checks, CI, a security policy, and honest limitations.
+Seven public platforms released under Apache-2.0, each a standalone repository with documented setup, real checks, CI, a security policy, and honest limitations.
 
 ### Agent Hub — self-hosted control plane for multi-provider AI agents
 
@@ -50,6 +50,24 @@ Six public platforms released under Apache-2.0, each a standalone repository wit
 - **Design stance:** No shell or arbitrary-command endpoint exists anywhere in the API. SHA sits deliberately between pure auditors (Lynis, OpenSCAP) and unbounded appliers (ansible-lockdown, Wazuh active response) — every disruptive action is a typed capability behind a mandatory approval gate.
 - **Skills demonstrated:** Security automation design, public-source provenance discipline, approval-boundary modeling, cross-platform agent development, full-stack testing, and clean install verification.
 - **Status:** Early-stage working control-plane slice, not a production-ready endpoint-management product. Public Apache-2.0 release.
+
+### Ominull — autonomous cyberops and ring-0 threat nullification platform
+
+[Repository](https://github.com/elias-leslie/ominull) · [Security policy](https://github.com/elias-leslie/ominull/blob/main/SECURITY.md)
+
+![Ominull CyberOps telemetry console, visual topology graph, and autonomous threat copilot](./docs/images/ominull-console.svg)
+
+- **Problem:** Endpoint threat response often relies on heavy, laggy user-mode agents or opaque third-party cloud EDRs that cannot isolate threats at microsecond kernel speeds without severing administrative forensic reachability.
+- **Solution:** An ultra-lean, cross-platform kernel network security and autonomous Incident Response (IR) platform providing microsecond ring-0 enforcement, in-flight Deep Packet Inspection (TLS ClientHello SNI and DNS wire dissection), statistical behavioral anomaly profiling, subnet quarantine mesh isolation, automated 1-click remote push-deployment, and an embedded 24/7 AI CyberOps Copilot.
+- **Stack:** Go 1.24, C (C11), Windows Filtering Platform (WFP) kernel driver (`ominull.sys`), Linux eBPF / TC packet classifiers, macOS `pfctl` anchors, SQLite, WebSockets, Local Ollama (`llama3.2`), Gemini API.
+- **Dual-tier threat containment:** Microsecond ring-0 host isolation dropping 100% of ingress and egress traffic at the kernel driver layer with an encrypted, unidirectional forensic pinhole back to the Hub; plus a Subnet Quarantine Mesh (`MESH_ISOLATE_PEER`) that commands all managed endpoints on an L2 broadcast domain to drop traffic to/from rogue, unmanaged, or compromised IoT devices.
+- **Discovery, fingerprinting, and stream DPI:** Multi-tier subnet asset discovery (ARP + TCP SYN probes + reverse PTR) with extensible multi-vector OS fingerprinting (TTL, TCP window size, app-layer response latency delta $\Delta t$, banner inspection, and dynamic operator/AI training feedback); in-flight TLS 1.3 `ClientHello` SNI parser and DNS wire dissector; and a Shannon entropy heuristic ($>3.85$ bits/byte) to detect Domain Generation Algorithms (`SUSPICIOUS_DGA_DOMAIN`).
+- **Behavioral anomaly engine:** Diurnal time-of-day hourly baselines flagging off-hours workstation activity (e.g. interactive shell egress at 02:00 UTC), real-time Welford's algorithm exfiltration spike Z-scores ($Z > 3.5$), periodic C2 beaconing jitter detection ($\Delta t < 0.2\text{s}$), and internal lateral port sweep / fan-out detection.
+- **Autonomous AI Copilot & 1-click deployer:** Embedded multi-model AI copilot (Local Ollama, Google Gemini Free Tier, OpenAI) with conversational ChatOps and automated MITRE ATT&CK forensic briefings; pure-Go SSH push-deployment engine for 1-click agent rollouts across discovered assets; and an operator console built as a zero-CDN, zero-NPM, embedded single-binary dashboard.
+- **Design stance — kernel speed with forensic pinholing:** Threat isolation must happen in microseconds inside ring-0, but cutting a host off from the network shouldn't blind the security operations center. Ominull enforces strict default-deny isolation in the kernel driver while maintaining a live, secure telemetry and remediation pinhole to the Hub.
+- **Skills demonstrated:** Kernel driver development (WFP ALE callouts and sublayers), eBPF / TC network filtering, low-level packet dissection (TLS/DNS), statistical anomaly detection, multi-model AI agent integration, pure-Go SSH provisioning, and zero-dependency web engineering.
+- **Security relevance:** Eliminates external cloud dependencies for threat nullification, isolates malicious traffic at the kernel before socket layer delivery, protects unmanaged network peers via mesh containment, and operates with zero secrets stored on disk.
+- **Status:** Public Apache-2.0 release. Fully functional standalone or deployed in multi-tenant MSP/enterprise environments.
 
 ### SummitFlow — task orchestration and evidence capture for AI-assisted development
 
