@@ -47,8 +47,8 @@
     <rect x="860" y="265" width="348" height="188" rx="24" fill="url(#card)" stroke="#22c55e" stroke-opacity="0.45"/>
     <text x="892" y="316" class="tag">SECURITY AUTOMATION</text>
     <text x="892" y="362" class="card-title">Ominull + SHA</text>
-    <text x="892" y="396" class="card-text">Ring-0 threat nullification,</text>
-    <text x="892" y="427" class="card-text">endpoint hardening &amp; mesh isolation</text>
+    <text x="892" y="396" class="card-text">Endpoint telemetry, containment,</text>
+    <text x="892" y="427" class="card-text">hardening &amp; approval gates</text>
   </g>
   <g filter="url(#shadow)">
     <rect x="72" y="490" width="348" height="170" rx="24" fill="url(#card)" stroke="#a78bfa" stroke-opacity="0.45"/>
@@ -60,7 +60,7 @@
   <g filter="url(#shadow)">
     <rect x="466" y="490" width="348" height="170" rx="24" fill="#0f172a" stroke="#64748b" stroke-opacity="0.55"/>
     <text x="498" y="538" class="tag">RELEASE DISCIPLINE</text>
-    <text x="498" y="582" class="card-title">Apache-2.0, verifiable</text>
+    <text x="498" y="582" class="card-title">Public, verifiable</text>
     <text x="498" y="616" class="card-text">Secret scanning · CI ·</text>
     <text x="498" y="644" class="card-text">docs · clean-install checks</text>
   </g>
@@ -68,7 +68,7 @@
     <rect x="860" y="490" width="348" height="170" rx="24" fill="#0f172a" stroke="#64748b" stroke-opacity="0.55"/>
     <text x="892" y="538" class="tag">FULL-STACK PROOF</text>
     <text x="892" y="582" class="card-title">Built end to end</text>
-    <text x="892" y="616" class="card-text">WFP (C) · eBPF · Go · FastAPI ·</text>
-    <text x="892" y="644" class="card-text">Next.js · Electron · Postgres/pgvector</text>
+    <text x="892" y="616" class="card-text">C · Go · FastAPI · TypeScript ·</text>
+    <text x="892" y="644" class="card-text">Next.js · Electron · PostgreSQL</text>
   </g>
 </svg>
