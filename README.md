@@ -16,7 +16,7 @@ The projects below are what that experience looks like when I build in the open.
 
 ## Projects
 
-Eight public repositories. Six are released under Apache-2.0 (Agent Hub, SummitFlow, Portfolio AI, Tether, A-Term, and Aico). SHA and Ominull are source-available under the Business Source License 1.1. Each has documented setup, tests, CI, and stated limitations; all but Tether include a security policy.
+Eight public repositories. Six are released under Apache-2.0 (Agent Hub, SummitFlow, Portfolio AI, Tether, A-Term, and Aico). SHA and Ominull are source-available under the Business Source License 1.1. Each has documented setup, tests, CI, stated limitations, and a security policy.
 
 ### Agent Hub: self-hosted control plane for multi-provider AI agents
 
@@ -54,6 +54,8 @@ Eight public repositories. Six are released under Apache-2.0 (Agent Hub, SummitF
 ### Ominull: self-hosted endpoint telemetry, detection, and containment hub
 
 [Repository](https://github.com/elias-leslie/ominull) · [Security policy](https://github.com/elias-leslie/ominull/blob/main/SECURITY.md)
+
+![Ominull console in demo mode: assets grouped by tenant and location, with agent state, device credentials, quarantine status and exposure, on a synthetic fleet](./docs/images/ominull-console-demo.png)
 
 - **Problem:** Operators of small Linux and Windows fleets need to see which programs talk to which networks, notice the behavior that matters, and contain a host when needed, without sending fleet data to a hosted EDR service or losing the ability to recover the host.
 - **Solution:** A self-hosted Linux hub with native Linux and Windows agents. It combines a fleet console, observed communication evidence, per-device identity, behavioral detection with operator tuning, and bounded response controls.
@@ -102,7 +104,7 @@ Eight public repositories. Six are released under Apache-2.0 (Agent Hub, SummitF
 
 ### Tether: session daemon behind A-Term and Aico
 
-[Repository](https://github.com/elias-leslie/tether)
+[Repository](https://github.com/elias-leslie/tether) · [Security policy](https://github.com/elias-leslie/tether/blob/main/SECURITY.md)
 
 - **Problem:** A-Term and Aico each grew their own tmux lifecycle, so the same agent session had two owners, two catalogs and two ways to end it, and the apps had to federate with each other to see each other's work.
 - **Solution:** A per-user Linux daemon that owns every durable terminal session. The apps keep only their views (Aico windows, A-Term panes) and ask Tether to create, rename, resize and end sessions. Either app works alone against Tether, and both can share one instance.
