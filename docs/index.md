@@ -19,7 +19,7 @@ As incident commander I led or supported about 30 ransomware and breach response
 
 ## Public projects
 
-Seven public repositories. Five are released under Apache-2.0 (Agent Hub, SummitFlow, Tether, A-Term and Aico). SHA and Ominull are source-available under the Business Source License 1.1. Each has documented setup, tests, CI, stated limitations and a security policy.
+Seven public project repositories. Five are released under Apache-2.0 (Agent Hub, SummitFlow, Tether, A-Term and Aico). SHA and Ominull are source-available under the Business Source License 1.1. Each has documented setup, tests, CI, stated limitations and a security policy.
 
 ### Agent Hub: self-hosted control plane for multi-provider AI agents
 
@@ -62,7 +62,7 @@ Seven public repositories. Five are released under Apache-2.0 (Agent Hub, Summit
 ![Ominull console in demo mode: assets grouped by tenant and location, with agent state, device credentials, quarantine status and exposure, on a synthetic fleet](./images/ominull-console-demo.png)
 
 - **Problem:** Operators of small Linux and Windows fleets need to see which programs talk to which networks, notice the behavior that matters, and contain a host when needed, without sending fleet data to a hosted EDR service or losing the ability to recover the host.
-- **Solution:** A self-hosted Linux hub with native Linux and Windows agents, running on my own endpoints. It combines a fleet console, observed communication evidence, per-device identity, behavioral detection with operator tuning, and bounded response controls.
+- **Solution:** A self-hosted Linux hub with native Linux and Windows agents, deployed and operated on my own hosts. It combines a fleet console, observed communication evidence, per-device identity, behavioral detection with operator tuning, and bounded response controls.
 - **Stack:** Go hub with an embedded operator console and SQLite store; C endpoint agents for Linux and Windows; signed Linux `.deb` and Windows `.msi` packages; systemd; OIDC and optional Cloudflare Tunnel/Access.
 - **Telemetry and evidence:** Agents report TCP socket-counter observations and passive UDP socket observations (a libbpf CO-RE program on Linux, an ETW consumer on Windows) with process attribution and stated coverage limits. Observation records are bounded evidence, not packet capture or proof of complete network visibility. A topology workspace groups communication by asset, network, and process without merging hosts on a shared name, and optional router telemetry adds DHCP leases, conntrack flows, and DNS answers without putting the hub in the network path.
 - **Detection:** Per-process transfer baselines scored with a robust modified z-score (median and MAD), beaconing detection that requires both regular timing and uniform payload size, agent-silence alerts, threat-intelligence and published network-attribution matching, and an on-demand subnet scanner that shows the evidence behind each identification. Learning windows produce tuning proposals that apply only when an operator accepts them.
