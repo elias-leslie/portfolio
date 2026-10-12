@@ -1,14 +1,15 @@
 Copyright (c) 2026 Elias Leslie
 
-Source code in this repository (the scripts/ directory and any other code)
-is licensed under the MIT License (below).
+Site code in this repository (the GitHub Pages configuration in
+docs/_config.yml and the template in docs/_includes/) is licensed under
+the MIT License (below).
 
-Portfolio content — the written case studies, project descriptions, images,
-diagrams, and PDF documents — is © 2026 Elias Leslie, all rights reserved,
-and may not be reused or republished without permission.
+Portfolio content (the written project descriptions, images, diagrams,
+icons, and social-preview cards) is (c) 2026 Elias Leslie, all rights
+reserved, and may not be reused or republished without permission.
 
 ------------------------------------------------------------------------
-MIT License (applies to source code only)
+MIT License (applies to site code only)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
