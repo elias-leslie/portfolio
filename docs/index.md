@@ -117,20 +117,20 @@ Seven public project repositories. Five are released under Apache-2.0 (Agent Hub
 - **Security relevance:** Ships loopback-only by default, isolates the file browser against path traversal, keeps A-Term authentication on every route that reaches Tether, and keeps agent working context local instead of in a hosted service.
 - **Status:** Public Apache-2.0 release. Requires Tether API v1. Projects come from SummitFlow when installed, otherwise from Tether's local list; Agent Hub adds prompt cleaning and a model catalog.
 
-### Aico: desktop companion for terminal AI agents
+### Aico: desktop shell for terminal AI agents
 
 [Repository](https://github.com/elias-leslie/aico) · [Security policy](https://github.com/elias-leslie/aico/blob/main/SECURITY.md)
 
 ![Aico lantern, a floating desktop widget running a Claude Code session on Linux](./images/aico-hero.png)
 
-- **Problem:** Terminal AI agents are useful but fragmented across shells, browser context, desktop selection and project state, and the thing you want the agent to look at is almost always already on your screen.
-- **Solution:** A Linux desktop companion that shows terminal AI CLIs (Claude Code, Codex, Gemini/Antigravity, Pi, and shells) in floating "lantern" widgets, then lets you tag a browser page, a selection, a window or a screen region straight into the running agent's prompt. Each widget is a view of a Tether session, so the same session also opens in A-Term.
-- **Stack:** Electron, TypeScript, Vite, xterm.js, node-pty, FastAPI, Python 3.13, SQLite, tmux, uv, Node.js, MV3 browser extension APIs; Tether for sessions.
-- **What was built:** Frameless terminal widgets that attach to Tether sessions and remember their geometry per session; closing a widget only detaches, so work reattaches across close, reopen and restart; one session list covering everything started from Aico, A-Term, the `tether` CLI or a SummitFlow root; a searchable command palette and pinned, drag-reorderable controls over one action registry; an agent launcher that swaps the TUI in a focused widget; Tether's lifecycle diagnostics (tmux target, scope, age, CPU and memory, containment warnings) one click away; a read-only scrollback overlay; a loopback FastAPI sidecar and MV3 browser extension for click-to-context capture; optional desktop window, region and OCR grab and voice dictation; and an AppImage build with a bundled PyInstaller sidecar, CI and release hardening (SHA256SUMS and build provenance).
-- **Design stance:** Deliberate, on-demand tagging rather than always-on recording. Screen-history tools capture everything and make you search it later; other launchers route capture into their own chat. Aico's target is *your* terminal agent, on Linux, with capture happening only when you ask for it.
-- **Skills demonstrated:** Desktop/Electron integration, local sidecar API design, client design against a session daemon, browser-context capture, and release hardening.
-- **Security relevance:** Keeps sensitive workflow state local by default, uses loopback APIs and a private socket, captures only on explicit action, and degrades when optional integrations are absent.
-- **Status:** Public Apache-2.0 release for single-user Linux desktops. Requires Tether API v1. X11 is the best-supported path for global shortcuts and desktop capture; Wayland has limitations.
+- **Problem:** Terminal AI agents are useful, but what you want an agent to look at is usually on a web page, and copying it into the terminal by hand breaks your flow.
+- **Solution:** A Linux desktop shell over Tether sessions. Each session (Claude Code, Codex, Antigravity, Pi or a shell) gets its own floating terminal window, and a browser extension sends what you select on a page straight into the running agent's prompt. The same sessions also open in A-Term.
+- **Stack:** Electron, TypeScript, Vite, xterm.js, node-pty, SQLite, tmux, Node.js, MV3 browser extension APIs; Tether for sessions.
+- **What was built:** Frameless terminal windows that attach to Tether sessions and remember their size and position per session; closing a window only detaches, so the session is still there after a close, reopen or restart; one session list covering everything started from Aico, A-Term, the `tether` CLI or a SummitFlow root; a searchable command palette and pinned, drag-reorderable controls over one action registry; an agent launcher that swaps the tool running in a window; Tether's session diagnostics (tmux target, scope, age, CPU and memory, containment warnings) one click away; native terminal scrollback; a small listener inside Aico's main process that types a browser capture at the last-focused session's prompt and tells the extension whether it landed; and a titlebar with animated eyes that show when the agent is working, has finished or is waiting on you, plus an optional pixel-art arcade.
+- **Design stance:** Capture happens only when you ask, and nothing is recorded or kept: a capture is typed into the session or refused. Tether owns the sessions; Aico keeps only window positions and settings.
+- **Skills demonstrated:** Desktop/Electron integration, client design against a session daemon, browser-context capture, and a small hardened loopback API.
+- **Security relevance:** Keeps workflow state local; the capture listener binds to loopback, refuses other browser origins and unexpected hosts, caps request size and stores nothing; session control goes over Tether's private socket; capture happens only on explicit action.
+- **Status:** Public Apache-2.0 release for single-user Linux desktops, installed from source. Requires Tether API v1. X11 is the best-supported path for global shortcuts; Wayland has limitations.
 
 ## Private projects
 
